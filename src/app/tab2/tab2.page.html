@@ -1,17 +1,26 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 2 page"></app-explore-container>
-</ion-content>
+<ion-row>
+  <ion-col size="9">
+    <h2>Buscar</h2>
+  </ion-col>
+  <ion-searchbar placeholder="Artistas, canciones o podcasts" ></ion-searchbar>
+  
+  <ion-content>
+  
+    <ion-list *ngIf="permission">
+      <ion-item *ngFor="let cancion of data2">
+        <ion-avatar slot="start">
+          <img src="../../assets/Imagenes/{{cancion.image}}">
+        </ion-avatar>
+        <ion-avatar slot="end">
+          <ion-icon name="search-outline"></ion-icon>
+        </ion-avatar>
+        <ion-label>
+          <h2 class="colorBlue">{{cancion.title}}</h2>
+          <p>{{user.description}}</p>
+        </ion-label>
+      </ion-item>   
+    </ion-list>
+  
+  
+  </ion-content>
+  

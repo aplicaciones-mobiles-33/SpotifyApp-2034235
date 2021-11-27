@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import albums from '../../assets/mockdata/albums';
 @Component({
   selector: 'app-album',
@@ -9,13 +9,19 @@ import albums from '../../assets/mockdata/albums';
 export class AlbumPage implements OnInit {
 
     data = null;
-  constructor(private activatedRoute: ActivatedRoute) { }
+  constructor(private activatedRoute: ActivatedRoute,
+     private router: Router) { }
 
   ngOnInit() {
     const title = this.activatedRoute.snapshot.paramMap.get('title');
     const decodedTitle = decodeURIComponent(title);
     this.data = albums[decodedTitle];
   }
+
+  /* openSong(t) {
+    const titulo = encodeURIComponent(t.title);
+    this.router.navigateByUrl(`/album/${titulo}`);
+  } */
 
   dasherize(string) {
     return string.replace(/[A-Z]/g, function(char, index){

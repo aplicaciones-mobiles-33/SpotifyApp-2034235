@@ -11,7 +11,7 @@ export class TabsPage {
   constructor() {}
   @ViewChild(IonTabs) tabs:IonTabs;
   seleccionar='';
-  progress ='43'
+  progress = 43;
   seleccionarTab() {
     console.log('Funcion llamada');
     this.seleccionar = this.tabs.getSelected();

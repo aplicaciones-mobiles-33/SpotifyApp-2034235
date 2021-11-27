@@ -12,13 +12,13 @@ import { Router } from '@angular/router';
 })
 export class Tab1Page {
 
-  data =[ 
+  data =[
   {
     title: 'Recientemente escuchadas',
     albums: recentlyPlayed
   },
   {
-    title: 'Rotacion Pesada', 
+    title: 'Rotacion Pesada',
     albums: heavyRotation
   },
   {
@@ -32,14 +32,14 @@ export class Tab1Page {
     slidesOffsetBefore: 20,
     spaceBetween: 20,
     freeMode: true
-  }
+  };
   constructor(private router: Router) {
 
   }
 
   openAlbum(album){
     const titleEscaped = encodeURIComponent(album.title);
-    this.router.navigateByUrl(`/tabs/tab1/${titleEscaped}`)
+    this.router.navigateByUrl(`/tabs/tab1/${titleEscaped}`);
   }
 
     dasherize(string) {
